@@ -880,12 +880,12 @@ def main(args):
 	# dblp dataset names dblp-ref-0.json dblp-ref-1.json dblp-ref-2.json dblp-ref-3.json
 	#file_path = args[0]; file_names = args[1:]; 
 
-	file_name_venues_authors_citations = (r"D:\DataMining\teammutualrespect-master\datasets\acm_classification/venues_authors_citations.pkl")
-	file_name_pid_authors = (r"D:\DataMining\teammutualrespect-master\datasets\acm_classification\pid_authors.pkl")
-	file_name_pid_venue = (r"D:\DataMining\teammutualrespect-master\datasets\acm_classification/pid_venue.txt")
-	file_name_venue_paper_counts = (r"D:\DataMining\teammutualrespect-master\datasets\acm_classification/venue_paper_counts.txt.txt")
+	file_name_venues_authors_citations = (r"venues_authors_citations.pkl")
+	file_name_pid_authors = (r"pid_authors.pkl")
+	file_name_pid_venue = (r"pid_venue.txt")
+	file_name_venue_paper_counts = (r"acm_classification/venue_paper_counts.txt.txt")
 	# 沒用到這個資料
-	file_name_venues_assignment_csv = (r"D:\DataMining\teammutualrespect-master\datasets\acm_classification/venues_cat_assign_refined.csv")
+	file_name_venues_assignment_csv = (r"acm_classification/venues_cat_assign_refined.csv")
 	kcore = 5
 	weighted = False
 
