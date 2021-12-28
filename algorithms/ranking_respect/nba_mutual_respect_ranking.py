@@ -33,7 +33,7 @@ def main(args):
 
 	random.seed(1)
 	for year in range(2010,2018,1):
-		year_list.append(year); year_list.append(year); year_list.append(year)
+		year_list.append(year); year_list.append(year)
 		total_start_time = time.time()
 		print('year is:',year)
 		nba_dataset_ranking = {}
@@ -90,24 +90,7 @@ def main(args):
 		num_of_nodes_list.append(num_of_nodes); num_of_skills_list.append(num_of_skills)
 		algorithm_list.append('Half Approximation'); score_list.append(half_approx_score)
 		solution_list.append(half_approx_solution_dict)
-
-		half_approx_var_start_time = time.time()
-		half_approx_var_solution_dict = mra.half_approximation_per_rank_algorithm(nba_dataset_ranking,weighted,skill_author_index_dict)
-		half_approx_var_elapsed_time = time.time() - half_approx_var_start_time
-		print('Elapsed time for half approximation variation:',half_approx_var_elapsed_time)
-		time_list.append(half_approx_var_elapsed_time)
-		half_approx_var_score = mra.compute_ranking_score(half_approx_var_solution_dict,nba_dataset_ranking,skill_author_index_dict)
-		# print('Solution dictionary from half approximation variation algorithm is:',half_approx_solution_dict)
-		print('Score is for half approximation variation:',half_approx_var_score)
-		print()
-		# storing solutions
-		num_of_nodes_list.append(num_of_nodes); num_of_skills_list.append(num_of_skills)
-		algorithm_list.append('Half Approximation Variation'); score_list.append(half_approx_var_score)
-		solution_list.append(half_approx_var_solution_dict)
-
-
 		
-
 		greedy_start_time = time.time()
 		greedy_solution_dict = mra.greedy_algorithm_random_skills_stop(nba_dataset_ranking,weighted,skill_author_index_dict)
 		greedy_elapsed_time = time.time() - greedy_start_time
@@ -121,7 +104,7 @@ def main(args):
 		solution_list.append(greedy_solution_dict)
 	
 		total_elapsed_time = time.time() - total_start_time
-		loop_time_list.append(total_elapsed_time); loop_time_list.append(total_elapsed_time); loop_time_list.append(total_elapsed_time);
+		loop_time_list.append(total_elapsed_time); loop_time_list.append(total_elapsed_time);
 
 		df = pd.DataFrame()
 		df['year'] = year_list

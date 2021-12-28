@@ -330,12 +330,12 @@ def half_approximation_random_algorithm(category_rankings, weighted):
     counter = 0
     best_score = -float("inf")
  
-    while counter < 50:
+    while counter < 500:
         solution_dict = {}
         selected_authors = {}
         category_rankings_copy = dict(category_rankings)
         # randomly select a skill 
-        category = random.choice(category_rankings_copy.keys())
+        category = random.choice(list(category_rankings_copy.keys()))
         # print('Random Category is:',category)
         category_ranking = category_rankings_copy[category]
  
@@ -352,7 +352,7 @@ def half_approximation_random_algorithm(category_rankings, weighted):
  
         while category_rankings_copy:
             highest_rank = float("inf");
-            category = random.choice(category_rankings_copy.keys())
+            category = random.choice(list(category_rankings_copy.keys()))
             category_ranking = category_rankings_copy[category]
             for ranking, author_score in enumerate(category_ranking):
                 author = author_score[0]
@@ -470,7 +470,7 @@ def half_approximation_per_rank_algorithm(category_rankings, weighted, skill_aut
 		num_of_nodes = len(list(category_rankings_copy.items())[0][1])
 		best_score = 0
 
-		for i in range(0,50):
+		for i in range(0,500):
 			# print('I is:',i)
 			solution_dict = {}
 			# selected_authors = {}
